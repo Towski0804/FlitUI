@@ -3,7 +3,7 @@
     <TopNav class="nav" />
     <div class="content">
       <aside v-if="asideVisible">
-        <h2>Components</h2>
+        <h3>Components</h3>
         <ol>
           <li>
             <router-link to="/doc/switch">Switch</router-link>
@@ -12,7 +12,7 @@
             <router-link to="/doc/button">Button</router-link>
           </li>
           <li>
-            <router-link to="/doc/dialog">Dialog</router-link>
+            <router-link to="/doc/dialogue">Dialogue</router-link>
           </li>
           <li>
             <router-link to="/doc/tabs">Tabs</router-link>
@@ -70,7 +70,7 @@ export default {
 }
 aside {
   background: #446ccf;
-  width: 180px;
+  width: 150px;
   padding: 16px;
   position: fixed;
   top: 0;

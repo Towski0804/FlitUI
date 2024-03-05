@@ -1,16 +1,7 @@
-<script setup lang="ts">
-import Test from './components/Test.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div>
-    oh header |
-    <router-link to="/">p1</router-link> |
-    <router-link to="/222">p2</router-link>
-  </div>
-  <hr />
   <router-view />
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>

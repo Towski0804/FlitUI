@@ -16,7 +16,12 @@ a {
   }
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
 }
 
@@ -45,7 +50,7 @@ body {
       $h: 28px;
       height: $h;
       line-height: $h;
-      border-radius: $h/2;
+      border-radius: calc($h/2);
       padding: 0 8px;
     }
   }

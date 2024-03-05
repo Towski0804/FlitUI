@@ -1,7 +1,7 @@
 <template>
   <TopNav />
   <div class="content">
-    <aside>
+    <aside v-if="asideVisible">
       <h2>Components</h2>
       <ol>
         <li>
@@ -23,10 +23,15 @@
 </template>
 
 <script lang="ts">
+import { inject } from 'vue'
 import TopNav from '../components/TopNav.vue'
 export default {
   components: {
     TopNav
+  },
+  setup() {
+    const asideVisible = inject('asideVisible')
+    return { asideVisible }
   }
 }
 </script>

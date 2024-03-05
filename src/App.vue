@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <router-view />
 </template>
@@ -18,3 +16,15 @@
   filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>
+
+<script>
+import { provide, ref } from 'vue'
+
+export default {
+  name: 'App',
+  setup() {
+    const asideVisible = ref(false)
+    provide('asideVisible', asideVisible)
+  }
+}
+</script>

@@ -10,7 +10,9 @@
 
 <style lang="scss" scoped>
 .topnav {
-  background: skyblue;
+  position: relative;
+  z-index: 10;
+  background: #fff;
   display: flex;
   padding: 16px;
   > .logo {

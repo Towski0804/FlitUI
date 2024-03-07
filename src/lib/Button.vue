@@ -47,5 +47,22 @@ $radius: 4px;
   &::-moz-focus-inner {
     border: 0;
   }
+  &.kind-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
+  }
+  &.kind-text {
+    border-color: transparent;
+    box-shadow: none;
+    &:hover,
+    &:focus {
+      background: #f5f5f5;
+    }
+  }
 }
 </style>

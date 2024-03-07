@@ -2,7 +2,7 @@
   <div>the demo of Button</div>
   <h1>Example 1</h1>
   <div>
-    <Button>plain</Button>
+    <Button>default kind</Button>
     <Button kind="button">button</Button>
     <Button kind="link">link</Button>
     <Button kind="text">text</Button>

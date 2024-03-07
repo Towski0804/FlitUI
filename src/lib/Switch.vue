@@ -1,18 +1,19 @@
 <template>
-  <button :class="{ checked: value }" @click="toggle">
+  <button :class="{ checked: modelValue }" @click="toggle">
     <span></span>
   </button>
-  <div>{{ value }}</div>
+  <div>{{ modelValue }}</div>
 </template>
 
 <script lang="ts">
 export default {
   props: {
-    value: Boolean
+    modelValue: Boolean
   },
+  emits: ['update:modelValue'],
   setup(props, context) {
     const toggle = () => {
-      context.emit('update:value', !props.value)
+      context.emit('update:modelValue', !props.modelValue)
     }
     return { toggle }
   }

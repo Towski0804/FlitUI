@@ -1,5 +1,5 @@
 <template>
-  <template v-if="visible">
+  <template v-if="modelValue">
     <teleport to="body">
       <div class="flit-dialogue-overlay" @click="onClickOverlay"></div>
       <div class="flit-dialogue-wrapper">
@@ -32,7 +32,7 @@ export default {
       type: String,
       default: 'Tips'
     },
-    visible: {
+    modelValue: {
       type: Boolean,
       default: false
     },
@@ -47,10 +47,10 @@ export default {
       type: Function
     }
   },
-  emits: ['update:visible'],
+  emits: ['update:modelValue'],
   setup(props, context) {
     const close = () => {
-      context.emit('update:visible', false)
+      context.emit('update:modelValue', false)
     }
     const onClickOverlay = () => {
       if (props.onClickOverlay) {

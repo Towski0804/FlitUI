@@ -2,7 +2,7 @@
   <div>Dialogue Component</div>
   <Button @click="toggle">Open Dialogue</Button>
   <Dialogue
-    v-model:visible="visible"
+    v-model="visible"
     :confirm="confirm"
     :cancel="cancel"
     title="Write your own title"

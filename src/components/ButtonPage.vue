@@ -60,6 +60,7 @@
   <div>
     <h2>Loading</h2>
     <Button loading>loading</Button>
+    <Button>loading complete</Button>
   </div>
 </template>
 <script>

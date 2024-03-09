@@ -1,16 +1,18 @@
 <template>
   <template v-if="visible">
-    <div class="flit-dialogue-overlay"></div>
+    <div class="flit-dialogue-overlay" @click="onClickOverlay"></div>
     <div class="flit-dialogue-wrapper">
       <div class="flit-dialogue">
-        <header>Title</header>
+        <header>
+          Title <span @click="close" class="flit-dialogue-close"></span>
+        </header>
         <main>
           <p>111111111111111111</p>
           <p>22222222222222222222</p>
         </main>
         <footer>
-          <Button>OK</Button>
-          <Button>Cancel</Button>
+          <Button level="main" @click="confirm">OK</Button>
+          <Button @click="cancel"> Cancel</Button>
         </footer>
       </div>
     </div>
@@ -27,6 +29,41 @@ export default {
     visible: {
       type: Boolean,
       default: false
+    },
+    onClickOverlay: {
+      type: Boolean,
+      default: true
+    },
+    confirm: {
+      type: Function
+    },
+    cancel: {
+      type: Function
+    }
+  },
+  emits: ['update:visible'],
+  setup(props, context) {
+    const close = () => {
+      context.emit('update:visible', false)
+    }
+    const onClickOverlay = () => {
+      if (props.onClickOverlay) {
+        close()
+      }
+    }
+    const confirm = () => {
+      if (props.confirm?.() !== false) {
+        close()
+      }
+    }
+    const cancel = () => {
+      close()
+    }
+    return {
+      close,
+      onClickOverlay,
+      confirm,
+      cancel
     }
   }
 }

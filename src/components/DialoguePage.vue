@@ -1,7 +1,11 @@
 <template>
   <div>Dialogue Component</div>
   <Button @click="toggle">Open Dialogue</Button>
-  <Dialogue :visible="visible">888</Dialogue>
+  <Dialogue
+    v-model:visible="visible"
+    :confirm="confirm"
+    :cancel="cancel"
+  ></Dialogue>
 </template>
 
 <script lang="ts">
@@ -18,9 +22,15 @@ export default {
     const toggle = () => {
       visible.value = !visible.value
     }
+    const confirm = (): Boolean => {
+      return false
+    }
+    const cancel = () => {}
     return {
       visible,
-      toggle
+      toggle,
+      confirm,
+      cancel
     }
   }
 }

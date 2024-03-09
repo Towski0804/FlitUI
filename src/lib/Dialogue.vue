@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="flit-dialogue-overlay" @click="onClickOverlay"></div>
-    <div class="flit-dialogue-wrapper">
-      <div class="flit-dialogue">
-        <header>
-          Title <span @click="close" class="flit-dialogue-close"></span>
-        </header>
-        <main>
-          <p>111111111111111111</p>
-          <p>22222222222222222222</p>
-        </main>
-        <footer>
-          <Button level="main" @click="confirm">OK</Button>
-          <Button @click="cancel"> Cancel</Button>
-        </footer>
+    <teleport to="body">
+      <div class="flit-dialogue-overlay" @click="onClickOverlay"></div>
+      <div class="flit-dialogue-wrapper">
+        <div class="flit-dialogue">
+          <header>
+            {{ title }}
+            <span @click="close" class="flit-dialogue-close"></span>
+          </header>
+          <main>
+            <slot />
+          </main>
+          <footer>
+            <Button level="main" @click="confirm">OK</Button>
+            <Button @click="cancel"> Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </teleport>
   </template>
 </template>
 
@@ -26,6 +28,10 @@ export default {
     Button
   },
   props: {
+    title: {
+      type: String,
+      default: 'Tips'
+    },
     visible: {
       type: Boolean,
       default: false

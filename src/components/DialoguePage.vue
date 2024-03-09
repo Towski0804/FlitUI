@@ -5,7 +5,10 @@
     v-model:visible="visible"
     :confirm="confirm"
     :cancel="cancel"
-  ></Dialogue>
+    title="Write your own title"
+  >
+    <div>Write your own content</div>
+  </Dialogue>
 </template>
 
 <script lang="ts">

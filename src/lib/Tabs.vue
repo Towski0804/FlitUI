@@ -1,30 +1,33 @@
 <template>
   <div>Tabs component</div>
   <div class="flit-tabs">
-    <div class="flit-tabs-nav">
+    <div class="flit-tabs-nav" ref="container">
       <div
         class="flit-tabs-nav-item"
         v-for="(title, index) in titles"
         :class="{ selected: modelValue === title }"
         :key="index"
         @click="select(title)"
+        :ref="
+          (el) => {
+            if (title === modelValue) {
+              selectedItem = el as HTMLDivElement
+            }
+          }
+        "
       >
         {{ title }}
       </div>
+      <div class="flit-tabs-nav-indicator" ref="indicator"></div>
     </div>
   </div>
   <div class="flit-tabs-content">
-    <component
-      class="flit-tabs-content-item"
-      :is="current"
-      :key="modelValue"
-      v-if="current"
-    ></component>
+    <component :is="current" :key="modelValue"></component>
   </div>
 </template>
 
 <script lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, ref, watchEffect } from 'vue'
 import Tab from './Tab.vue'
 export default {
   props: {
@@ -33,6 +36,22 @@ export default {
     }
   },
   setup(props, context) {
+    const selectedItem = ref<HTMLDivElement | null>(null)
+    const indicator = ref<HTMLDivElement | null>(null)
+    const container = ref<HTMLDivElement | null>(null)
+    onMounted(() => {
+      watchEffect(() => {
+        if (selectedItem.value && indicator.value && container.value) {
+          const { width } = selectedItem.value.getBoundingClientRect()
+          indicator.value.style.width = width + 'px'
+          const { left: left1 } = container.value.getBoundingClientRect()
+          const { left: left2 } = selectedItem.value.getBoundingClientRect()
+          const left = left2 - left1
+          indicator.value.style.left = left + 'px'
+        }
+      })
+    })
+
     const defaults = context.slots.default?.()
     defaults?.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -50,13 +69,17 @@ export default {
       defaults,
       titles,
       current,
-      select
+      select,
+      selectedItem,
+      indicator,
+      container
     }
   }
 }
 </script>
 
 <style lang="scss">
+$blue: #1890ff;
 $color: #333;
 $border-color: #d9d9d9;
 .flit-tabs {
@@ -64,6 +87,7 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
     &-item {
       padding: 8px 0;
       margin: 0 16px;
@@ -72,8 +96,17 @@ $border-color: #d9d9d9;
         margin-left: 0;
       }
       &.selected {
-        color: red;
+        color: $blue;
       }
+    }
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+      width: 100px;
+      transition: all 250ms;
     }
   }
   &-content {

@@ -1,9 +1,13 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <div class="logo">
+      <svg class="icon">
+        <use xlink:href="#icon-wing"></use>
+      </svg>
+    </div>
     <ul class="menu">
-      <li>菜单 1</li>
-      <li>菜单 2</li>
+      <li>Menu 1</li>
+      <li>Menu 2</li>
     </ul>
     <span class="toggleAside" @click="toggleAside"></span>
   </div>
@@ -34,10 +38,13 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
-  background: #d08a8a;
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    > svg {
+      width: 32px;
+      height: 32px;
+    }
   }
   > .menu {
     display: flex;

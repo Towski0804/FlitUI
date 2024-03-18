@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <TopNav class="nav" />
+    <TopNav class="nav" :toggleAsideVisible="true" />
     <div class="content">
       <aside v-if="asideVisible">
         <h3>Components</h3>

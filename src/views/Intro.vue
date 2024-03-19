@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="markdown-body">
     <h1>Introduction</h1>
     <p>Flit UI is a UI component library based on Vue 3 and TypeScript.</p>
     <p>

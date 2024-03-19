@@ -3,6 +3,18 @@
     <TopNav class="nav" :toggleAsideVisible="true" />
     <div class="content">
       <aside v-if="asideVisible">
+        <h3>Doc</h3>
+        <ol>
+          <li>
+            <router-link to="/doc/intro">Introduction</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/install">Install</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/get-started">Get Started</router-link>
+          </li>
+        </ol>
         <h3>Components</h3>
         <ol>
           <li>
@@ -41,6 +53,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.router-link-active {
+  color: #3290ed;
+}
 .layout {
   display: flex;
   flex-direction: column;
@@ -68,7 +83,7 @@ export default {
   }
 }
 aside {
-  background: #446ccf;
+  border-right: 1px solid rgba(102, 102, 102, 0.5);
   width: 150px;
   padding: 16px;
   position: fixed;
@@ -76,12 +91,12 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
-  > h2 {
-    margin-bottom: 4px;
+  > h3 {
+    margin: 10px 0px;
   }
   > ol {
     > li {
-      padding: 4px 0;
+      padding: 8px 0;
     }
   }
   main {

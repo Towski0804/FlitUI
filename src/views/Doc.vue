@@ -83,8 +83,9 @@ export default {
   }
 }
 aside {
+  z-index: 10;
   background: white;
-  border-right: 1px solid rgba(102, 102, 102, 0.5);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
   width: 150px;
   padding: 16px;
   position: fixed;

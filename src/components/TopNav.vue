@@ -45,6 +45,8 @@ export default {
   left: 0;
   width: 100%;
   z-index: 20;
+  background-color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
   justify-content: center;
   align-items: center;
   > .logo {

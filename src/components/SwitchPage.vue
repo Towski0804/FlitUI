@@ -1,48 +1,30 @@
 <template>
   <div>
     <h1>Switch Component Example</h1>
-    <div class="demo">
-      <h2>Basic Usage</h2>
-      <div class="demo-component">
-        <component :is="SwitchDemo1"></component>
-      </div>
-      <div class="demo-actions">
-        <Button>View Code</Button>
-      </div>
-      <div class="demo-code">
-        <pre v-text="SwitchDemo1Raw"></pre>
-      </div>
-    </div>
-    <div class="demo">
-      <h2>Supports Disabled</h2>
-      <div class="demo-component">
-        <component :is="SwitchDemo2"></component>
-      </div>
-      <div class="demo-actions">
-        <Button>View Code</Button>
-      </div>
-      <div class="demo-code">
-        <pre v-text="SwitchDemo2Raw"></pre>
-      </div>
-    </div>
+    <Demo
+      title="Basic Usage"
+      :component="SwitchDemo1"
+      :raw-code="SwitchDemo1Raw"
+    ></Demo>
+    <Demo
+      title="Disabled"
+      :component="SwitchDemo2"
+      :raw-code="SwitchDemo2Raw"
+    ></Demo>
   </div>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
-import Switch from '../lib/Switch.vue'
-import Button from '../lib/Button.vue'
 import SwitchDemo1 from './SwitchDemos/SwitchDemo1.vue'
 import SwitchDemo2 from './SwitchDemos/SwitchDemo2.vue'
 import SwitchDemo1Raw from './SwitchDemos/SwitchDemo1.vue?raw'
 import SwitchDemo2Raw from './SwitchDemos/SwitchDemo2.vue?raw'
+import Demo from './Demo.vue'
 
 export default {
-  components: { Switch, Button },
+  components: { Demo },
   setup() {
-    const active = ref(true)
     return {
-      active,
       SwitchDemo1,
       SwitchDemo2,
       SwitchDemo1Raw,

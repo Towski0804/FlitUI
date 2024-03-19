@@ -10,7 +10,7 @@
         <Button>View Code</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model="active" /&gt;</pre>
+        <pre v-text="SwitchDemo1Raw"></pre>
       </div>
     </div>
     <div class="demo">
@@ -22,7 +22,7 @@
         <Button>View Code</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model="active" disabled /&gt;</pre>
+        <pre v-text="SwitchDemo2Raw"></pre>
       </div>
     </div>
   </div>
@@ -34,11 +34,20 @@ import Switch from '../lib/Switch.vue'
 import Button from '../lib/Button.vue'
 import SwitchDemo1 from './SwitchDemos/SwitchDemo1.vue'
 import SwitchDemo2 from './SwitchDemos/SwitchDemo2.vue'
+import SwitchDemo1Raw from './SwitchDemos/SwitchDemo1.vue?raw'
+import SwitchDemo2Raw from './SwitchDemos/SwitchDemo2.vue?raw'
+
 export default {
   components: { Switch, Button },
   setup() {
     const active = ref(true)
-    return { active, SwitchDemo1, SwitchDemo2 }
+    return {
+      active,
+      SwitchDemo1,
+      SwitchDemo2,
+      SwitchDemo1Raw,
+      SwitchDemo2Raw
+    }
   }
 }
 </script>

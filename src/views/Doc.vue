@@ -83,6 +83,7 @@ export default {
   }
 }
 aside {
+  background: white;
   border-right: 1px solid rgba(102, 102, 102, 0.5);
   width: 150px;
   padding: 16px;

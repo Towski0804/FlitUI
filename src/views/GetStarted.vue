@@ -26,3 +26,12 @@
 </pre>
   </article>
 </template>
+
+<style lang="scss" scoped>
+@media (max-width: 500px) {
+  .markdown-body {
+    margin: 10px auto;
+    max-width: 92vw;
+  }
+}
+</style>

@@ -70,8 +70,9 @@ export default {
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
 .demo {
+  max-width: 92vw;
+  margin: 10px auto;
   border: 1px solid $border-color;
-  margin: 16px 0 32px;
   > h2 {
     font-size: 20px;
     padding: 8px 16px;

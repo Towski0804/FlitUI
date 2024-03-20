@@ -3,6 +3,7 @@
     class="flit-switch"
     :class="{ 'flit-checked': modelValue }"
     @click="toggle"
+    :disabled="disabled"
   >
     <span></span>
   </button>
@@ -12,7 +13,11 @@
 <script lang="ts">
 export default {
   props: {
-    modelValue: Boolean
+    modelValue: Boolean,
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
   emits: ['update:modelValue'],
   setup(props, context) {
@@ -35,6 +40,9 @@ $h2: $h - 4px;
   border-radius: calc($h/2);
   position: relative;
   transition: background 250ms;
+  &[disabled] {
+    cursor: not-allowed;
+  }
   > span {
     position: absolute;
     top: 2px;

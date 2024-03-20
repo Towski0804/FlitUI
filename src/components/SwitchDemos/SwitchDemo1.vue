@@ -9,7 +9,7 @@ import Switch from '../../lib/Switch.vue'
 export default {
   components: { Switch },
   setup() {
-    const active = ref(true)
+    const active = ref(false)
     return { active }
   }
 }

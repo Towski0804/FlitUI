@@ -51,6 +51,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.topnav {
+  background: none;
+  box-shadow: none;
+}
 .flit-banner {
   padding: 100px 0;
   display: flex;
@@ -78,7 +82,7 @@ export default {
   }
 }
 .features {
-  margin: 64px auto;
+  margin: 40px auto;
   @media (min-width: 800px) {
     width: 800px;
     > ul {
@@ -91,13 +95,14 @@ export default {
     width: 1200px;
     > ul {
       > li {
-        width: 33.3333%;
+        width: 30%;
       }
     }
   }
   > ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     > li {
       width: 400px;
       margin: 16px 0;

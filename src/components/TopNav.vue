@@ -11,13 +11,13 @@
       </li>
     </ul>
     <svg v-if="toggleAsideVisible" class="toggleAside" @click="toggleAside">
-      <use xlink:href="#icon-menu"></use>
+      <use :xlink:href="icon"></use>
     </svg>
   </div>
 </template>
 
 <script lang="ts">
-import { Ref, inject } from 'vue'
+import { Ref, computed, inject } from 'vue'
 
 export default {
   props: {
@@ -31,7 +31,10 @@ export default {
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value
     }
-    return { toggleAside }
+    const icon = computed(() => {
+      return asideVisible.value ? '#icon-close' : '#icon-menu'
+    })
+    return { toggleAside, icon }
   }
 }
 </script>

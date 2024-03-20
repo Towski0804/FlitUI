@@ -1,5 +1,4 @@
 <template>
-  <div>Tabs component</div>
   <div class="flit-tabs">
     <div class="flit-tabs-nav" ref="container">
       <div

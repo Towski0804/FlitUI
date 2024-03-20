@@ -1,73 +1,49 @@
 <template>
-  <h1>the demo of Button</h1>
-  <h2>Button Kind</h2>
-  <div>
-    <Button>default kind</Button>
-    <Button kind="button">button</Button>
-    <Button kind="link">link</Button>
-    <Button kind="text">text</Button>
-  </div>
-  <hr />
-  <h2>Button Size</h2>
-  <div>
-    <h3>kind=button(default)</h3>
-    <Button size="big">Big</Button>
-    <Button>Normal</Button>
-    <Button size="small">Small</Button>
-  </div>
-  <div>
-    <h3>kind=link</h3>
-    <Button kind="link" size="big">Big</Button>
-    <Button kind="link">Normal</Button>
-    <Button size="small" kind="link">Small</Button>
-  </div>
-  <div>
-    <h3>kind=text</h3>
-    <Button size="big" kind="text">Big</Button>
-    <Button kind="text">Normal</Button>
-    <Button size="small" kind="text">Small</Button>
-  </div>
-  <hr />
-  <h2>Button Level</h2>
-  <div>
-    <div>
-      <h3>kind=button(default)</h3>
-      <Button level="main">Main Button</Button>
-      <Button>Normal Button</Button>
-      <Button level="danger">Danger Button</Button>
-    </div>
-    <div>
-      <h3>kind=link</h3>
-      <Button kind="link" level="main">Main Link</Button>
-      <Button kind="link">Normal Link</Button>
-      <Button kind="link" level="danger">Danger Link</Button>
-    </div>
-    <div>
-      <h3>kind=text</h3>
-      <Button kind="text" level="main">Main Text</Button>
-      <Button kind="text">Normal Text</Button>
-      <Button kind="text" level="danger">Danger Text</Button>
-    </div>
-  </div>
-  <hr />
-  <h2>Button Disabled</h2>
-  <div>
-    <Button disabled>Disabled Button</Button>
-    <Button kind="link" disabled>Disabled Link</Button>
-    <Button kind="text" disabled>Disabled Text</Button>
-  </div>
-  <hr />
-  <div>
-    <h2>Loading</h2>
-    <Button loading>loading</Button>
-    <Button>loading complete</Button>
-  </div>
+  <h1>Button Examples</h1>
+  <Demo title="Kind" :component="ButtonDemo1" :rawCode="ButtonDemo1Raw"></Demo>
+  <Demo title="Size" :component="ButtonDemo2" :rawCode="ButtonDemo2Raw"></Demo>
+  <Demo title="Level" :component="ButtonDemo3" :rawCode="ButtonDemo3Raw"></Demo>
+  <Demo
+    title="Disabled"
+    :component="ButtonDemo4"
+    :rawCode="ButtonDemo4Raw"
+  ></Demo>
+  <Demo
+    title="Loading"
+    :component="ButtonDemo5"
+    :rawCode="ButtonDemo5Raw"
+  ></Demo>
 </template>
 <script>
-import Button from '../lib/Button.vue'
+import Demo from './Demo.vue'
+import ButtonDemo1 from './ButtonDemos/ButtonDemo1.vue'
+import ButtonDemo1Raw from './ButtonDemos/ButtonDemo1.vue?raw'
+import ButtonDemo2 from './ButtonDemos/ButtonDemo2.vue'
+import ButtonDemo2Raw from './ButtonDemos/ButtonDemo2.vue?raw'
+import ButtonDemo3 from './ButtonDemos/ButtonDemo3.vue'
+import ButtonDemo3Raw from './ButtonDemos/ButtonDemo3.vue?raw'
+import ButtonDemo4 from './ButtonDemos/ButtonDemo4.vue'
+import ButtonDemo4Raw from './ButtonDemos/ButtonDemo4.vue?raw'
+import ButtonDemo5 from './ButtonDemos/ButtonDemo5.vue'
+import ButtonDemo5Raw from './ButtonDemos/ButtonDemo5.vue?raw'
+
 export default {
   components: {
-    Button
+    Demo
+  },
+  setup() {
+    return {
+      ButtonDemo1,
+      ButtonDemo1Raw,
+      ButtonDemo2,
+      ButtonDemo2Raw,
+      ButtonDemo3,
+      ButtonDemo3Raw,
+      ButtonDemo4,
+      ButtonDemo4Raw,
+      ButtonDemo5,
+      ButtonDemo5Raw
+    }
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Switch Component Example</h1>
+    <h1>Switch Examples</h1>
     <Demo
       title="Basic Usage"
       :component="SwitchDemo1"

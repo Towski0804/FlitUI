@@ -5,7 +5,6 @@ import Switch from './components/SwitchPage.vue'
 import Button from './components/ButtonPage.vue'
 import Dialogue from './components/DialoguePage.vue'
 import Tabs from './components/TabsPage.vue'
-import DocRoot from './components/DocRootPage.vue'
 import Intro from './views/Intro.vue'
 import Install from './views/Install.vue'
 import GetStarted from './views/GetStarted.vue'
@@ -19,7 +18,7 @@ export const router = createRouter({
       path: '/doc',
       component: Doc,
       children: [
-        { path: '', component: DocRoot },
+        { path: '', redirect: '/doc/intro' },
         { path: 'intro', component: Intro },
         { path: 'install', component: Install },
         { path: 'get-started', component: GetStarted },

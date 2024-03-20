@@ -1,39 +1,25 @@
 <template>
-  <div>Dialogue Component</div>
-  <Button @click="toggle">Open Dialogue</Button>
-  <Dialogue
-    v-model="visible"
-    :confirm="confirm"
-    :cancel="cancel"
-    title="Write your own title"
-  >
-    <div>Write your own content</div>
-  </Dialogue>
+  <h1>Dialogue Examples</h1>
+  <Demo
+    title="Dialogue"
+    :component="DialogueDemo1"
+    :rawCode="DialogueDemo1Raw"
+  ></Demo>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
-import Button from '../lib/Button.vue'
-import Dialogue from '../lib/Dialogue.vue'
+import Demo from './Demo.vue'
+import DialogueDemo1 from './DialogueDemos/DialogueDemo1.vue'
+import DialogueDemo1Raw from './DialogueDemos/DialogueDemo1.vue?raw'
+
 export default {
   components: {
-    Button,
-    Dialogue
+    Demo
   },
   setup() {
-    const visible = ref(false)
-    const toggle = () => {
-      visible.value = !visible.value
-    }
-    const confirm = (): Boolean => {
-      return false
-    }
-    const cancel = () => {}
     return {
-      visible,
-      toggle,
-      confirm,
-      cancel
+      DialogueDemo1,
+      DialogueDemo1Raw
     }
   }
 }

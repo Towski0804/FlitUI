@@ -17,7 +17,7 @@
 import { ref, computed, nextTick, watch } from 'vue'
 import Button from '../lib/Button.vue'
 import Prism from 'prismjs'
-import 'prismjs/themes/prism.css'
+import 'prism-themes/themes/prism-ghcolors.css'
 
 export default {
   props: {

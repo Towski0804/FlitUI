@@ -7,8 +7,10 @@
           <h1>FlitUI</h1>
           <h2>Fast & Elegant</h2>
           <p class="actions">
-            <a href="https://github.com/Towski0804/FlitUI">Star Me</a>
-            <router-link to="doc">Get Started</router-link>
+            <a href="https://github.com/Towski0804/FlitUI" class="navButton"
+              >Star Me</a
+            >
+            <router-link to="doc" class="navButton">Get Started</router-link>
           </p>
         </div>
       </div>
@@ -70,7 +72,7 @@ export default {
   > .actions {
     padding: 8px 0;
     a {
-      margin: 0 8px;
+      margin: 20px 8px;
       background: #fff;
       display: inline-block;
       $h: 28px;
@@ -78,6 +80,16 @@ export default {
       line-height: $h;
       border-radius: calc($h/2);
       padding: 0 8px;
+    }
+    > .navButton {
+      transition: all 0.3s ease;
+    }
+    > .navButton:hover {
+      box-shadow:
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #fff,
+        0 0 40px #fff;
     }
   }
 }

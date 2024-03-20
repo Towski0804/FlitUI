@@ -33,7 +33,7 @@
           </ol>
         </aside>
       </transition>
-      <main @click="asideVisible = false">
+      <main @click="isMobile && (asideVisible = false)">
         <router-view />
       </main>
     </div>
@@ -41,7 +41,7 @@
 </template>
 
 <script lang="ts">
-import { inject } from 'vue'
+import { inject, ref, onMounted, onUnmounted } from 'vue'
 import TopNav from '../components/TopNav.vue'
 export default {
   components: {
@@ -49,7 +49,20 @@ export default {
   },
   setup() {
     const asideVisible = inject('asideVisible')
-    return { asideVisible }
+    const isMobile = ref(window.innerWidth <= 500)
+    const updateWidth = () => {
+      isMobile.value = window.innerWidth <= 500
+      console.log(isMobile.value)
+    }
+
+    onMounted(() => {
+      window.addEventListener('resize', updateWidth)
+    })
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', updateWidth)
+    })
+    return { asideVisible, isMobile }
   }
 }
 </script>

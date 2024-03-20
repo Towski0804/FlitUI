@@ -10,14 +10,19 @@
         <router-link to="/doc">Doc</router-link>
       </li>
     </ul>
-    <svg v-if="toggleAsideVisible" class="toggleAside" @click="toggleAside">
+    <svg
+      v-if="toggleAsideVisible"
+      class="toggleAside"
+      @click="toggleAside"
+      :class="{ 'icon-change': iconChanged }"
+    >
       <use :xlink:href="icon"></use>
     </svg>
   </div>
 </template>
 
 <script lang="ts">
-import { Ref, computed, inject } from 'vue'
+import { Ref, computed, inject, ref, watch } from 'vue'
 
 export default {
   props: {
@@ -31,10 +36,24 @@ export default {
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value
     }
-    const icon = computed(() => {
-      return asideVisible.value ? '#icon-close' : '#icon-menu'
-    })
-    return { toggleAside, icon }
+    const iconChanged = ref(false)
+    const icon = computed(() =>
+      asideVisible.value ? '#icon-close' : '#icon-menu'
+    )
+
+    watch(
+      () => asideVisible.value,
+      (newValue, oldValue) => {
+        if (newValue !== oldValue) {
+          iconChanged.value = true
+          setTimeout(() => {
+            iconChanged.value = false
+          }, 300)
+        }
+      }
+    )
+
+    return { toggleAside, icon, iconChanged }
   }
 }
 </script>
@@ -77,6 +96,7 @@ export default {
     top: 50%;
     transform: translateY(-50%);
     display: none;
+    transition: all 0.3s ease-in-out;
   }
   @media (max-width: 500px) {
     > .menu {
@@ -87,6 +107,20 @@ export default {
     }
     > .toggleAside {
       display: inline-block;
+    }
+  }
+  .icon-change {
+    animation: fadeInOut 0.3s;
+  }
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }

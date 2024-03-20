@@ -31,7 +31,7 @@
           </li>
         </ol>
       </aside>
-      <main>
+      <main @click="asideVisible = false">
         <router-view />
       </main>
     </div>

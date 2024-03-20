@@ -2,35 +2,37 @@
   <div class="layout">
     <TopNav class="nav" :toggleAsideVisible="true" />
     <div class="content">
-      <aside v-if="asideVisible">
-        <h3>Doc</h3>
-        <ol>
-          <li>
-            <router-link to="/doc/intro">Introduction</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/install">Install</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/get-started">Get Started</router-link>
-          </li>
-        </ol>
-        <h3>Components</h3>
-        <ol>
-          <li>
-            <router-link to="/doc/switch">Switch</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/button">Button</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/dialogue">Dialogue</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/tabs">Tabs</router-link>
-          </li>
-        </ol>
-      </aside>
+      <transition name="slide">
+        <aside v-if="asideVisible">
+          <h3>Doc</h3>
+          <ol>
+            <li>
+              <router-link to="/doc/intro">Introduction</router-link>
+            </li>
+            <li>
+              <router-link to="/doc/install">Install</router-link>
+            </li>
+            <li>
+              <router-link to="/doc/get-started">Get Started</router-link>
+            </li>
+          </ol>
+          <h3>Components</h3>
+          <ol>
+            <li>
+              <router-link to="/doc/switch">Switch</router-link>
+            </li>
+            <li>
+              <router-link to="/doc/button">Button</router-link>
+            </li>
+            <li>
+              <router-link to="/doc/dialogue">Dialogue</router-link>
+            </li>
+            <li>
+              <router-link to="/doc/tabs">Tabs</router-link>
+            </li>
+          </ol>
+        </aside>
+      </transition>
       <main @click="asideVisible = false">
         <router-view />
       </main>
@@ -93,6 +95,7 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
+  transition: transform 0.3s ease;
   > h3 {
     margin: 10px 0px;
   }
@@ -104,5 +107,13 @@ aside {
   main {
     overflow: auto;
   }
+}
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(-100%);
+}
+.slide-enter-to,
+.slide-leave-from {
+  transform: translateX(0);
 }
 </style>

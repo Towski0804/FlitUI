@@ -1,15 +1,32 @@
 <template>
   <h1>Button Examples</h1>
-  <Demo title="Kind" :component="ButtonDemo1" :rawCode="ButtonDemo1Raw"></Demo>
-  <Demo title="Size" :component="ButtonDemo2" :rawCode="ButtonDemo2Raw"></Demo>
-  <Demo title="Level" :component="ButtonDemo3" :rawCode="ButtonDemo3Raw"></Demo>
+  <Demo
+    title="Kind"
+    description="There are 3 kinds of buttons: <strong>button</strong>, <strong>link</strong>, and <strong>text</strong>. The default kind is <strong>button</strong>."
+    :component="ButtonDemo1"
+    :rawCode="ButtonDemo1Raw"
+  ></Demo>
+  <Demo
+    title="Size"
+    description="There are 3 sizes of buttons: <strong>small</strong>, <strong>medium</strong>, and <strong>large</strong>. The default size is <strong>medium</strong>."
+    :component="ButtonDemo2"
+    :rawCode="ButtonDemo2Raw"
+  ></Demo>
+  <Demo
+    title="Level"
+    description="There are 3 levels of buttons: <strong>main</strong>, <strong>normal</strong>, and <strong>danger</strong>. The default level is <strong>normal</strong>."
+    :component="ButtonDemo3"
+    :rawCode="ButtonDemo3Raw"
+  ></Demo>
   <Demo
     title="Disabled"
+    description="You can disable a button by adding the <strong>disabled</strong> attribute to the component."
     :component="ButtonDemo4"
     :rawCode="ButtonDemo4Raw"
   ></Demo>
   <Demo
     title="Loading"
+    description="You can show a loading spinner by adding the <strong>loading</strong> attribute to the component."
     :component="ButtonDemo5"
     :rawCode="ButtonDemo5Raw"
   ></Demo>

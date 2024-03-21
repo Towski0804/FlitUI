@@ -1,18 +1,15 @@
 <template>
   <div>
-    <h3>kind=button(default)</h3>
     <Button size="big">Big</Button>
     <Button>Normal</Button>
     <Button size="small">Small</Button>
   </div>
   <div>
-    <h3>kind=link</h3>
     <Button kind="link" size="big">Big</Button>
     <Button kind="link">Normal</Button>
     <Button size="small" kind="link">Small</Button>
   </div>
   <div>
-    <h3>kind=text</h3>
     <Button size="big" kind="text">Big</Button>
     <Button kind="text">Normal</Button>
     <Button size="small" kind="text">Small</Button>
@@ -25,3 +22,14 @@ export default {
   components: { Button }
 }
 </script>
+
+<style lang="scss" scoped>
+div {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+div:last-of-type {
+  margin-bottom: 0;
+}
+</style>

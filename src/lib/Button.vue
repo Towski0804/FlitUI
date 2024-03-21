@@ -15,7 +15,7 @@ export default {
     },
     size: {
       type: String,
-      default: 'normal'
+      default: 'medium'
     },
     level: {
       type: String,
@@ -50,8 +50,8 @@ export default {
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
-$blue: #40a9ff;
-$red: red;
+$blue: #24a0ed;
+$red: #d7231a;
 $radius: 4px;
 $grey: grey;
 .flit-button {

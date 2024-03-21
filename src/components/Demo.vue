@@ -1,6 +1,6 @@
 <template>
   <h2>{{ title }}</h2>
-  <h3>{{ description }}</h3>
+  <div class="description" v-html="description"></div>
   <div class="demo">
     <div class="demo-component">
       <component :is="component"></component>
@@ -74,6 +74,10 @@ export default {
 
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
+.description {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
 .demo {
   max-width: 92vw;
   margin: 10px auto 30px;

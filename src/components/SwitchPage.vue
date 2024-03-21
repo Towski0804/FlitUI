@@ -2,11 +2,15 @@
   <h1>Switch Examples</h1>
   <Demo
     title="Basic Usage"
+    description="
+    <p>Simply import the component and bind a <strong>ref</strong> object of type boolean to the <strong>v-model</strong> directive.
+    </p>"
     :component="SwitchDemo1"
     :raw-code="SwitchDemo1Raw"
   ></Demo>
   <Demo
     title="Disabled"
+    description="You can disable the switch by simply adding the <strong>disabled</strong> attribute to the component."
     :component="SwitchDemo2"
     :raw-code="SwitchDemo2Raw"
   ></Demo>

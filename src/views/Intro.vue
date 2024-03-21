@@ -18,6 +18,6 @@
       component. Instructions for running the library can be found in the
       README.md file.
     </p>
-    Next section: <a href="#/doc/install">Installation</a>
+    Next section: <router-link to="/doc/install">Installation</router-link>
   </article>
 </template>

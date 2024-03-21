@@ -72,7 +72,7 @@ $border-color: #d9d9d9;
 .demo {
   max-width: 92vw;
   margin: 10px auto;
-  border: 1px solid $border-color;
+  box-shadow: 0 0 5px $border-color;
   > h2 {
     font-size: 20px;
     padding: 8px 16px;

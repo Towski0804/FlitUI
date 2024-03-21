@@ -1,6 +1,7 @@
 <template>
+  <h2>{{ title }}</h2>
+  <h3>{{ description }}</h3>
   <div class="demo">
-    <h2>{{ title }}</h2>
     <div class="demo-component">
       <component :is="component"></component>
     </div>
@@ -24,6 +25,10 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    description: {
+      type: String,
+      default: ''
     },
     component: {
       type: Object,
@@ -71,13 +76,8 @@ export default {
 $border-color: #d9d9d9;
 .demo {
   max-width: 92vw;
-  margin: 10px auto;
+  margin: 10px auto 30px;
   box-shadow: 0 0 5px $border-color;
-  > h2 {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
-  }
   &-component {
     padding: 16px;
   }

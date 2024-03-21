@@ -79,7 +79,7 @@ $border-color: #d9d9d9;
   font-size: 1.1em;
 }
 .demo {
-  max-width: 92vw;
+  max-width: 91vw;
   margin: 10px auto 30px;
   box-shadow: 0 0 5px $border-color;
   &-component {

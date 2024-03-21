@@ -16,7 +16,7 @@ export default {
     Tab
   },
   setup() {
-    const selected = ref('Nav Tab 2')
+    const selected = ref('Nav Tab 1')
     return {
       selected
     }

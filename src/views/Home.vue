@@ -95,28 +95,12 @@ export default {
 }
 .features {
   margin: 40px auto;
-  @media (min-width: 800px) {
-    width: 800px;
-    > ul {
-      > li {
-        width: 50%;
-      }
-    }
-  }
-  @media (min-width: 1200px) {
-    width: 1200px;
-    > ul {
-      > li {
-        width: 30%;
-      }
-    }
-  }
   > ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     > li {
-      width: 400px;
+      width: 360px;
       margin: 16px 0;
       display: grid;
       justify-content: start;
@@ -137,6 +121,23 @@ export default {
       }
       > p {
         grid-area: text;
+      }
+    }
+  }
+  @media (min-width: 800px) {
+    width: 800px;
+    > ul {
+      > li {
+        width: 49%;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    width: 1200px;
+    > ul {
+      > li {
+        width: 30%;
+        margin: 16px 16px;
       }
     }
   }

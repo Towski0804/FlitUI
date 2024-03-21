@@ -41,24 +41,28 @@
 </template>
 
 <script lang="ts">
-import { inject, ref, onMounted, onUnmounted } from 'vue'
+import { Ref, inject, ref, onMounted, onUnmounted } from 'vue'
 import TopNav from '../components/TopNav.vue'
 export default {
   components: {
     TopNav
   },
   setup() {
-    const asideVisible = inject('asideVisible')
+    const asideVisible = inject('asideVisible') as Ref<boolean>
+    const toggleAside = () => {
+      asideVisible.value = !asideVisible.value
+    }
     const isMobile = ref(window.innerWidth <= 500)
     const updateWidth = () => {
+      const current = isMobile.value
       isMobile.value = window.innerWidth <= 500
-      console.log(isMobile.value)
+      if (current !== isMobile.value) {
+        toggleAside()
+      }
     }
-
     onMounted(() => {
       window.addEventListener('resize', updateWidth)
     })
-
     onUnmounted(() => {
       window.removeEventListener('resize', updateWidth)
     })

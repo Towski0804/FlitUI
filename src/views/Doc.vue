@@ -30,6 +30,9 @@
             <li>
               <router-link to="/doc/tabs">Tabs</router-link>
             </li>
+            <li>
+              <router-link to="/doc/alert">Alert</router-link>
+            </li>
           </ol>
         </aside>
       </transition>

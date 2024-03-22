@@ -83,7 +83,6 @@ export default {
 $border-color: #d9d9d9;
 .description {
   margin: 10px 0;
-  font-size: 1.1em;
 }
 .demo {
   max-width: 91vw;

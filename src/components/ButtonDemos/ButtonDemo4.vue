@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Button disabled>Disabled Button</Button>
-    <Button kind="link" disabled>Disabled Link</Button>
-    <Button kind="text" disabled>Disabled Text</Button>
+    <Button disabled>Button</Button>
+    <Button kind="link" disabled>Link</Button>
+    <Button kind="text" disabled>Text</Button>
   </div>
 </template>
 
@@ -12,14 +12,3 @@ export default {
   components: { Button }
 }
 </script>
-
-<style lang="scss" scoped>
-div {
-  display: flex;
-  align-items: baseline;
-  margin-bottom: 20px;
-}
-div:last-of-type {
-  margin-bottom: 0;
-}
-</style>

@@ -52,6 +52,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #24a0ed;
 $red: #d7231a;
+$yellow: #f1c40f;
 $radius: 4px;
 $grey: grey;
 .flit-button {
@@ -121,7 +122,17 @@ $grey: grey;
         border-color: darken($blue, 10%);
       }
     }
-    &.flit-level-danger {
+    &.flit-level-warning {
+      background: $yellow;
+      border-color: $yellow;
+      color: white;
+      &:hover,
+      &:focus {
+        background: darken($yellow, 10%);
+        border-color: darken($yellow, 10%);
+      }
+    }
+    &.flit-level-error {
       background: $red;
       border-color: $red;
       color: white;
@@ -133,7 +144,14 @@ $grey: grey;
     }
   }
   &.flit-kind-link {
-    &.flit-level-danger {
+    &.flit-level-warning {
+      color: $yellow;
+      &:hover,
+      &:focus {
+        color: darken($yellow, 10%);
+      }
+    }
+    &.flit-level-error {
       color: $red;
       &:hover,
       &:focus {
@@ -156,7 +174,14 @@ $grey: grey;
         color: darken($color, 10%);
       }
     }
-    &.flit-level-danger {
+    &.flit-level-warning {
+      color: $yellow;
+      &:hover,
+      &:focus {
+        color: darken($yellow, 10%);
+      }
+    }
+    &.flit-level-error {
       color: $red;
       &:hover,
       &:focus {

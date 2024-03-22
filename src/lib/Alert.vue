@@ -12,11 +12,15 @@
 <script lang="ts">
 export default {
   props: {
+    modelValue: {
+      type: Boolean,
+      default: false
+    },
     type: {
       type: String,
       default: 'info',
       validator: (value) =>
-        ['success', 'info', 'warning', 'error'].includes(value)
+        ['success', 'info', 'warning', 'error'].includes(value as string)
     },
     closable: {
       type: Boolean,
@@ -25,10 +29,6 @@ export default {
     message: {
       type: String,
       required: true
-    },
-    modelValue: {
-      type: Boolean,
-      default: false
     },
     top: {
       type: Boolean,
@@ -76,6 +76,7 @@ export default {
   border-radius: 4px;
   margin-bottom: 10px;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   &.success {

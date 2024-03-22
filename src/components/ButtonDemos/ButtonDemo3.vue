@@ -10,9 +10,14 @@
     <Button kind="text">Normal</Button>
   </div>
   <div>
-    <Button level="danger">Danger</Button>
-    <Button kind="link" level="danger">Danger</Button>
-    <Button kind="text" level="danger">Danger</Button>
+    <Button level="warning">Warning</Button>
+    <Button kind="link" level="warning">Warning</Button>
+    <Button kind="text" level="warning">Warning</Button>
+  </div>
+  <div>
+    <Button level="error">Error</Button>
+    <Button kind="link" level="error">Error</Button>
+    <Button kind="text" level="error">Error</Button>
   </div>
 </template>
 

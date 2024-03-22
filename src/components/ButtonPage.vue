@@ -31,7 +31,7 @@
     :rawCode="ButtonDemo5Raw"
   ></Demo>
 </template>
-<script>
+<script lang="ts">
 import Demo from './Demo.vue'
 import ButtonDemo1 from './ButtonDemos/ButtonDemo1.vue'
 import ButtonDemo1Raw from './ButtonDemos/ButtonDemo1.vue?raw'

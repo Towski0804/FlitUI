@@ -1,18 +1,18 @@
 <template>
   <div>
-    <Button level="main">Main Button</Button>
-    <Button kind="link" level="main">Main Link</Button>
-    <Button kind="text" level="main">Main Text</Button>
+    <Button level="main">Main</Button>
+    <Button kind="link" level="main">Main</Button>
+    <Button kind="text" level="main">Main</Button>
   </div>
   <div>
-    <Button>Normal Button</Button>
-    <Button kind="link">Normal Link</Button>
-    <Button kind="text">Normal Text</Button>
+    <Button>Normal</Button>
+    <Button kind="link">Normal</Button>
+    <Button kind="text">Normal</Button>
   </div>
   <div>
-    <Button level="danger">Danger Button</Button>
-    <Button kind="link" level="danger">Danger Link</Button>
-    <Button kind="text" level="danger">Danger Text</Button>
+    <Button level="danger">Danger</Button>
+    <Button kind="link" level="danger">Danger</Button>
+    <Button kind="text" level="danger">Danger</Button>
   </div>
 </template>
 
@@ -22,14 +22,3 @@ export default {
   components: { Button }
 }
 </script>
-
-<style lang="scss" scoped>
-div {
-  display: flex;
-  align-items: baseline;
-  margin-bottom: 20px;
-}
-div:last-of-type {
-  margin-bottom: 0;
-}
-</style>

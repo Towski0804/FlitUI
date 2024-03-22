@@ -57,7 +57,14 @@ export default {
       if (newVal) {
         await nextTick()
         // this is to color the code section
-        Prism.highlightElement(codeBlock.value.querySelector('code'))
+        if (codeBlock.value) {
+          const codeElement = (codeBlock.value as HTMLElement)?.querySelector(
+            'code'
+          )
+          if (codeElement) {
+            Prism.highlightElement(codeElement)
+          }
+        }
       }
     })
 
@@ -72,7 +79,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $border-color: #d9d9d9;
 .description {
   margin: 10px 0;
@@ -84,6 +91,15 @@ $border-color: #d9d9d9;
   box-shadow: 0 0 5px $border-color;
   &-component {
     padding: 16px;
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+    > div:last-of-type {
+      margin-bottom: 0;
+    }
   }
   &-actions {
     padding: 8px 16px;

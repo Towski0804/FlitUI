@@ -56,6 +56,10 @@ export default {
     const updateWidth = () => {
       const current = isMobile.value
       isMobile.value = window.innerWidth <= 500
+      // if aside is visible and window is changed from mobile to desktop, then keep aside visible
+      if (current && asideVisible.value) {
+        return
+      }
       if (current !== isMobile.value) {
         toggleAside()
       }

@@ -5,8 +5,9 @@
     <p>
       Please first <a href="#/doc/install">install</a> this component library.
     </p>
-    <p>Then, include the following code in your project:</p>
+    <p>Then, import the components and the css file where you need them:</p>
     <pre><code>import {Button, Tabs, Switch, Dialog} from "flitui"</code></pre>
+    <pre><code>import 'cws-flitui/dist/style.css'</code></pre>
     You can now use the components provided by this library.
 
     <h2>Vue Single File Component</h2>

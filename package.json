@@ -2,6 +2,12 @@
   "name": "flitui",
   "private": true,
   "version": "0.0.0",
+  "files": [
+    "dist/*"
+  ],
+  "main": [
+    "dist/flit-ui.js"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",

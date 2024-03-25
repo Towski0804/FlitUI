@@ -9,7 +9,7 @@ export default defineConfig({
       entry: 'src/lib/index.ts',
       name: 'FlitUI',
       fileName: 'flit-ui',
-      formats: ['umd']
+      formats: ['es', 'umd']
     },
     rollupOptions: {
       external: ['vue'],

@@ -1,6 +1,5 @@
 {
-  "name": "flitui",
-  "private": true,
+  "name": "cws-flitui",
   "version": "0.1.0",
   "files": [
     "dist/*"

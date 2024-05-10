@@ -1,6 +1,6 @@
-# rm -rf dist
-# bun install
-# bun run build
+rm -rf dist
+bun install
+bun run build
 
 tar -czvf dist.tar.gz dist 
 

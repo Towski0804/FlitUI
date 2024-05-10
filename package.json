@@ -1,10 +1,10 @@
 {
   "name": "cws-flitui",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "files": [
-    "dist/*"
+    "dist/lib/*"
   ],
-  "main": "dist/flit-ui.js",
+  "main": "dist/lib/flit-ui.umd.cjs",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -29,6 +29,7 @@
     "sass": "^1.71.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
+    "vite-plugin-css-injected-by-js": "^3.5.1",
     "vue-eslint-parser": "^8.0.0",
     "vue-tsc": "^1.8.27"
   }

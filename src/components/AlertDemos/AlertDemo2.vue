@@ -8,8 +8,8 @@
 </template>
 
 <script lang="ts">
-import Alert from '../../lib/Alert.vue'
-import Button from '../../lib/Button.vue'
+// import the Alert component
+import { Alert, Button } from 'cws-flitui'
 export default {
   components: {
     Button,

@@ -22,7 +22,8 @@
 </template>
 
 <script lang="ts">
-import Button from '../../lib/Button.vue'
+// import the Button component
+import { Button } from 'cws-flitui'
 export default {
   components: { Button }
 }

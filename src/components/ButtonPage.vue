@@ -14,7 +14,7 @@
   ></Demo>
   <Demo
     title="Level"
-    description="There are 3 levels of buttons: <strong>main</strong>, <strong>normal</strong>, and <strong>error</strong>. The default level is <strong>normal</strong>."
+    description="There are 4 levels of buttons: <strong>main</strong>, <strong>normal</strong>, <strong>warning</strong>, and <strong>error</strong>. The default level is <strong>normal</strong>."
     :component="ButtonDemo3"
     :rawCode="ButtonDemo3Raw"
   ></Demo>

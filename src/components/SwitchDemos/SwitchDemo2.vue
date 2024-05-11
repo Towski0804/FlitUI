@@ -4,7 +4,8 @@
 
 <script lang="ts">
 import { ref } from 'vue'
-import Switch from '../../lib/Switch.vue'
+// import the Switch component
+import { Switch } from 'cws-flitui'
 export default {
   components: { Switch },
   setup() {

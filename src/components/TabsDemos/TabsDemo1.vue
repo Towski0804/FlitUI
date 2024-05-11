@@ -6,8 +6,8 @@
 </template>
 
 <script lang="ts">
-import Tabs from '../../lib/Tabs.vue'
-import Tab from '../../lib/Tab.vue'
+// import the Tabs and Tab components
+import { Tabs, Tab } from 'cws-flitui'
 import { ref } from 'vue'
 
 export default {

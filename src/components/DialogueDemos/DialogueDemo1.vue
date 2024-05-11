@@ -12,8 +12,9 @@
 
 <script lang="ts">
 import { ref } from 'vue'
-import Button from '../../lib/Button.vue'
-import Dialogue from '../../lib/Dialogue.vue'
+import { Button } from 'cws-flitui'
+// import the Dialogue component
+import { Dialogue } from 'cws-flitui'
 export default {
   components: {
     Button,

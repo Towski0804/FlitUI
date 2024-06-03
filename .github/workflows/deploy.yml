@@ -1,0 +1,38 @@
+name: Deploy FlitUI Doc site
+
+on:
+  push:
+    branches:
+      - main # Trigger the workflow on push to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Uses Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build the project
+        run: bun run build
+
+      - name: Archive generated files
+        run: tar -czvf dist.tar.gz dist
+
+      - name: Copy files via scp
+        env:
+          HOST: ${{ secrets.REMOTE_HOST }}
+          USER: ${{ secrets.REMOTE_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" > private_key
+          chmod 600 private_key
+          scp -i private_key -o StrictHostKeyChecking=no dist.tar.gz $USER@$HOST:/root/www/flitui/
+          ssh -i private_key -o StrictHostKeyChecking=no $USER@$HOST "sudo rm -rf /root/www/flitui/dist && tar -xzvf /root/www/flitui/dist.tar.gz -C /root/www/flitui && sudo rm -rf /root/www/flitui/dist.tar.gz"
+          rm -rf private_key
